@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Web Vault — Admin</title>
+  <link rel="stylesheet" href="CSS/admin.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <nav class="nav-bar" aria-label="Main navigation">
+    <a class="nav-item" href="#" title="Home"><span class="nav-icon">⌂</span><span class="nav-label">Home</span></a>
+    <a class="nav-item" href="#" title="Games"><span class="nav-icon">⌘</span><span class="nav-label">Games</span></a>
+    <a class="nav-item" href="#" title="Websites"><span class="nav-icon">◎</span><span class="nav-label">Websites</span></a>
+    <a class="nav-item" href="#" title="Settings"><span class="nav-icon">⚙</span><span class="nav-label">Settings</span></a>
+    <span class="nav-item active" title="Admin"><span class="nav-icon">⌘</span><span class="nav-label">Admin</span></span>
+  </nav>
+
+  <main class="admin-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">V</span><div><strong>THE WEB VAULT</strong><small>ADMIN CONSOLE</small></div></div>
+      <div class="sidebar-label">WORKSPACE</div>
+      <button class="side-link selected" data-view="dashboard"><span>▦</span> Dashboard</button>
+      <button class="side-link" data-view="games"><span>◈</span> Games <b class="side-count">248</b></button>
+      <button class="side-link" data-view="users"><span>♙</span> Users <b class="side-count">126</b></button>
+      <div class="sidebar-label">SYSTEM</div>
+      <button class="side-link" data-view="diagnostics"><span>⌁</span> Diagnostics</button>
+      <button class="side-link" data-view="storage"><span>▤</span> Storage</button>
+      <button class="side-link" data-view="activity"><span>◷</span> Activity log</button>
+      <div class="sidebar-bottom"><span class="status-dot"></span><span>All systems operational</span><small>PROTOTYPE MODE</small></div>
+    </aside>
+
+    <section class="main-panel">
+      <header class="topline">
+        <div class="breadcrumbs">The Web Vault <span>/</span> <strong id="crumb">Dashboard</strong></div>
+        <div class="top-actions"><span class="env-pill"><i></i> LIVE SITE</span><button class="avatar" title="Admin profile">A</button></div>
+      </header>
+
+      <section class="view active" id="view-dashboard">
+        <div class="page-heading">
+          <div><p class="eyebrow">OVERVIEW / SYSTEM SNAPSHOT</p><h1>Dashboard</h1><p class="subhead">A quick look at what's happening across The Web Vault.</p></div>
+          <button class="button secondary" id="refreshBtn">↻ <span>Refresh data</span></button>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total games</span><span class="stat-icon purple">◈</span></div><div class="stat-number">248</div><div class="stat-foot"><span class="up">↗ 12</span> added this month</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Registered users</span><span class="stat-icon blue">♙</span></div><div class="stat-number">126</div><div class="stat-foot"><span class="up">↗ 8</span> this month</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Total visits</span><span class="stat-icon pink">↗</span></div><div class="stat-number">18.4k</div><div class="stat-foot"><span class="up">↗ 6.2%</span> vs. last month</div></article>
+          <article class="stat-card"><div class="stat-top"><span>System status</span><span class="stat-icon green">✓</span></div><div class="stat-number status-text">Operational</div><div class="stat-foot"><span class="status-dot"></span> No known incidents</div></article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel recent-panel">
+            <div class="panel-heading"><div><h2>Recent activity</h2><p>Latest changes across the site</p></div><button class="text-button" data-jump="activity">View log ↗</button></div>
+            <div class="activity-list">
+              <div class="activity-row"><span class="activity-symbol purple">＋</span><div class="activity-copy"><strong>Game entry added</strong><p>Polytrack · Games catalog</p></div><time>12 min ago</time></div>
+              <div class="activity-row"><span class="activity-symbol blue">♙</span><div class="activity-copy"><strong>New account registered</strong><p>vault_guest_42 · Users</p></div><time>38 min ago</time></div>
+              <div class="activity-row"><span class="activity-symbol pink">✎</span><div class="activity-copy"><strong>Website link updated</strong><p>Website catalog</p></div><time>2 hours ago</time></div>
+              <div class="activity-row"><span class="activity-symbol green">✓</span><div class="activity-copy"><strong>Database check completed</strong><p>Realtime Database · Healthy</p></div><time>Today</time></div>
+            </div>
+          </article>
+          <article class="panel health-panel">
+            <div class="panel-heading"><div><h2>System health</h2><p>Service availability</p></div><span class="healthy-pill">● Healthy</span></div>
+            <div class="health-item"><div><span>Firebase connection</span><b>Connected</b></div><div class="health-track"><i style="width:100%"></i></div></div>
+            <div class="health-item"><div><span>Game catalog</span><b>Loaded</b></div><div class="health-track"><i style="width:100%"></i></div></div>
+            <div class="health-item"><div><span>Site assets</span><b>Available</b></div><div class="health-track"><i style="width:96%"></i></div></div>
+            <div class="note"><span>ⓘ</span><p>Demo values only. This prototype is not connected to Firebase or live site data.</p></div>
+          </article>
+        </div>
+        <div class="quick-actions"><h2>Quick actions</h2><div class="quick-grid"><button class="quick-card" data-jump="games"><span class="quick-icon">＋</span><span><strong>Manage games</strong><small>Edit catalog entries</small></span><b>↗</b></button><button class="quick-card" data-jump="users"><span class="quick-icon blue">♙</span><span><strong>Manage users</strong><small>Review account details</small></span><b>↗</b></button><button class="quick-card" data-jump="diagnostics"><span class="quick-icon pink">⌁</span><span><strong>Run diagnostics</strong><small>Check service status</small></span><b>↗</b></button></div></div>
+      </section>
+
+      <section class="view" id="view-games">
+        <div class="page-heading"><div><p class="eyebrow">CATALOG MANAGEMENT</p><h1>Games</h1><p class="subhead">Manage the games shown in the Vault catalog.</p></div><button class="button primary" id="addGameBtn">＋ Add game</button></div>
+        <div class="panel table-panel"><div class="table-toolbar"><input id="gameSearch" placeholder="Search games..." aria-label="Search games"><select id="categoryFilter" aria-label="Filter category"><option value="all">All categories</option><option>Action</option><option>Arcade</option><option>Racing</option><option>Sandbox</option></select><span class="toolbar-count" id="gameCount">5 entries</span></div>
+          <div class="table-wrap"><table><thead><tr><th>GAME</th><th>CATEGORY</th><th>STATUS</th><th>LINK</th><th></th></tr></thead><tbody id="gamesBody"></tbody></table></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-users">
+        <div class="page-heading"><div><p class="eyebrow">ACCOUNT MANAGEMENT</p><h1>Users</h1><p class="subhead">Review account roles and account status.</p></div><button class="button secondary" id="exportUsers">↓ Export list</button></div>
+        <div class="stats-grid compact"><article class="stat-card"><div class="stat-top"><span>All accounts</span></div><div class="stat-number">126</div></article><article class="stat-card"><div class="stat-top"><span>Admins</span></div><div class="stat-number">3</div></article><article class="stat-card"><div class="stat-top"><span>Active today</span></div><div class="stat-number">19</div></article></div>
+        <div class="panel table-panel"><div class="table-toolbar"><input id="userSearch" placeholder="Search username..." aria-label="Search users"><span class="toolbar-count">Demo accounts</span></div><div class="table-wrap"><table><thead><tr><th>USERNAME</th><th>ROLE</th><th>STATUS</th><th>CREATED</th><th></th></tr></thead><tbody id="usersBody"></tbody></table></div></div>
+      </section>
+
+      <section class="view" id="view-diagnostics">
+        <div class="page-heading"><div><p class="eyebrow">TROUBLESHOOTING</p><h1>Diagnostics</h1><p class="subhead">A quick status view for common site dependencies.</p></div><button class="button primary" id="runChecks">▶ Run checks</button></div>
+        <div class="diag-grid"><article class="panel diag-card"><span class="diag-icon">◉</span><h2>Firebase</h2><p>Connection and configuration</p><span class="healthy-pill">Demo: connected</span></article><article class="panel diag-card"><span class="diag-icon">▤</span><h2>Catalog data</h2><p>Game and website entries</p><span class="healthy-pill">Demo: loaded</span></article><article class="panel diag-card"><span class="diag-icon">↗</span><h2>External links</h2><p>Embedded and external URLs</p><span class="warning-pill">Not tested</span></article></div><div class="panel output-panel"><h2>Check output</h2><pre id="checkOutput">Ready. Select “Run checks” to simulate a diagnostic pass.</pre></div>
+      </section>
+
+      <section class="view" id="view-storage">
+        <div class="page-heading"><div><p class="eyebrow">DATA OVERVIEW</p><h1>Storage</h1><p class="subhead">Illustrative view of the Vault's data collections.</p></div></div>
+        <div class="storage-grid"><article class="panel storage-card"><span>▤</span><h2>Games</h2><strong>248 records</strong><p>Catalog entries and metadata</p><div class="health-track"><i style="width:68%"></i></div></article><article class="panel storage-card"><span>◎</span><h2>Websites</h2><strong>74 records</strong><p>External site directory</p><div class="health-track"><i style="width:35%"></i></div></article><article class="panel storage-card"><span>♙</span><h2>Users</h2><strong>126 profiles</strong><p>Public profile metadata</p><div class="health-track"><i style="width:49%"></i></div></article></div><p class="disclaimer">Storage amounts and record counts are placeholders, not live Firebase measurements.</p>
+      </section>
+
+      <section class="view" id="view-activity">
+        <div class="page-heading"><div><p class="eyebrow">AUDIT TRAIL</p><h1>Activity log</h1><p class="subhead">A readable history of important changes.</p></div><button class="button secondary" id="clearLog">Clear demo log</button></div>
+        <div class="panel table-panel"><div class="table-toolbar"><span class="toolbar-count">Recent events · Demo data</span></div><div class="table-wrap"><table><thead><tr><th>EVENT</th><th>DETAILS</th><th>TIME</th><th>RESULT</th></tr></thead><tbody id="logBody"></tbody></table></div></div>
+      </section>
+      <footer class="footer"><span>THE WEB VAULT</span><span>Admin concept · UI only · <span id="clock"></span></span></footer>
+    </section>
+  </main>
+
+  <dialog id="gameDialog"><form method="dialog" id="gameForm"><div class="dialog-head"><div><p class="eyebrow">CATALOG</p><h2>Add a game</h2></div><button class="close-btn" value="cancel" aria-label="Close">×</button></div><label>Game title<input id="newTitle" required placeholder="e.g. Polytrack"></label><label>Category<select id="newCategory"><option>Arcade</option><option>Action</option><option>Racing</option><option>Sandbox</option></select></label><label>Game URL<input id="newUrl" type="url" required placeholder="https://example.com"></label><div class="dialog-actions"><button class="button secondary" value="cancel">Cancel</button><button class="button primary" value="default">Add to demo</button></div><p class="form-hint">Adds a temporary row in this browser only. Nothing is saved to the live site.</p></form></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="JS/Admin.js"></script>
+</body>
+</html>
